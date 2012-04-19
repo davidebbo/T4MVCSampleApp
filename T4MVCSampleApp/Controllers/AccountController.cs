@@ -38,7 +38,7 @@ namespace T4MVCSampleApp.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction(MVC.Home.Index());
                     }
                 }
                 else
@@ -58,7 +58,7 @@ namespace T4MVCSampleApp.Controllers
         {
             FormsAuthentication.SignOut();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(MVC.Home.Index());
         }
 
         //
@@ -84,7 +84,7 @@ namespace T4MVCSampleApp.Controllers
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction(MVC.Home.Index());
                 }
                 else
                 {
@@ -130,7 +130,7 @@ namespace T4MVCSampleApp.Controllers
 
                 if (changePasswordSucceeded)
                 {
-                    return RedirectToAction("ChangePasswordSuccess");
+                    return RedirectToAction(Actions.ChangePasswordSuccess());
                 }
                 else
                 {
