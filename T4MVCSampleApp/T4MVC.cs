@@ -23,12 +23,20 @@ using T4MVC;
 
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static class MVC {
+    static readonly MyCoolAreaClass s_MyCoolArea = new MyCoolAreaClass();
+    public static MyCoolAreaClass MyCoolArea { get { return s_MyCoolArea; } }
     public static T4MVCSampleApp.Controllers.AccountController Account = new T4MVCSampleApp.Controllers.T4MVC_AccountController();
     public static T4MVCSampleApp.Controllers.HomeController Home = new T4MVCSampleApp.Controllers.T4MVC_HomeController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
 namespace T4MVC {
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public class MyCoolAreaClass {
+        public readonly string Name = "MyCoolArea";
+        public T4MVCSampleApp.Areas.MyCoolArea.Controllers.BlahController Blah = new T4MVCSampleApp.Areas.MyCoolArea.Controllers.T4MVC_BlahController();
+        public T4MVC.MyCoolArea.SharedController Shared = new T4MVC.MyCoolArea.SharedController();
+    }
 }
 
    
