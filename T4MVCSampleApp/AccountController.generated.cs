@@ -95,8 +95,8 @@ namespace T4MVCSampleApp.Controllers {
 
         public override System.Web.Mvc.ActionResult LogOn(T4MVCSampleApp.Models.LogOnModel model, string returnUrl) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.LogOn);
-            callInfo.RouteValueDictionary.Add("model", model);
-            callInfo.RouteValueDictionary.Add("returnUrl", returnUrl);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "returnUrl", returnUrl);
             return callInfo;
         }
 
@@ -112,7 +112,7 @@ namespace T4MVCSampleApp.Controllers {
 
         public override System.Web.Mvc.ActionResult Register(T4MVCSampleApp.Models.RegisterModel model) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Register);
-            callInfo.RouteValueDictionary.Add("model", model);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             return callInfo;
         }
 
@@ -123,7 +123,7 @@ namespace T4MVCSampleApp.Controllers {
 
         public override System.Web.Mvc.ActionResult ChangePassword(T4MVCSampleApp.Models.ChangePasswordModel model) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ChangePassword);
-            callInfo.RouteValueDictionary.Add("model", model);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             return callInfo;
         }
 

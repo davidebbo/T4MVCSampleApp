@@ -64,7 +64,7 @@ namespace System.Web.Mvc {
         }
 
         public static MvcForm BeginForm(this HtmlHelper htmlHelper, ActionResult result, FormMethod formMethod, object htmlAttributes) {
-            return BeginForm(htmlHelper, result, formMethod, new RouteValueDictionary(htmlAttributes));
+            return BeginForm(htmlHelper, result, formMethod, HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes));
         }
 
         public static MvcForm BeginForm(this HtmlHelper htmlHelper, ActionResult result, FormMethod formMethod, IDictionary<string, object> htmlAttributes) {
@@ -100,7 +100,7 @@ namespace System.Web.Mvc {
         }
 
         public static MvcHtmlString ActionLink(this AjaxHelper ajaxHelper, string linkText, ActionResult result, AjaxOptions ajaxOptions, object htmlAttributes) {
-            return ajaxHelper.RouteLink(linkText, result.GetRouteValueDictionary(), ajaxOptions, new RouteValueDictionary(htmlAttributes));
+            return ajaxHelper.RouteLink(linkText, result.GetRouteValueDictionary(), ajaxOptions, HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes));
         }
 
         public static MvcHtmlString ActionLink(this AjaxHelper ajaxHelper, string linkText, ActionResult result, AjaxOptions ajaxOptions, IDictionary<string, object> htmlAttributes) {
@@ -112,7 +112,7 @@ namespace System.Web.Mvc {
         }
 
         public static MvcForm BeginForm(this AjaxHelper ajaxHelper, ActionResult result, AjaxOptions ajaxOptions, object htmlAttributes) {
-            return BeginForm(ajaxHelper, result, ajaxOptions, new RouteValueDictionary(htmlAttributes));
+            return BeginForm(ajaxHelper, result, ajaxOptions, HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes));
         }
 
         public static MvcForm BeginForm(this AjaxHelper ajaxHelper, ActionResult result, AjaxOptions ajaxOptions, IDictionary<string, object> htmlAttributes) {
@@ -225,7 +225,7 @@ namespace System.Web.Mvc {
 
             // Add all the extra values
             foreach (var pair in routeValues) {
-                currentRouteValues.Add(pair.Key, pair.Value);
+                ModelUnbinderHelpers.AddRouteValues(currentRouteValues, pair.Key, pair.Value);
             }
 
             return result;
@@ -239,7 +239,7 @@ namespace System.Web.Mvc {
 
         public static ActionResult AddRouteValue(this ActionResult result, string name, object value) {
             RouteValueDictionary routeValues = result.GetRouteValueDictionary();
-            routeValues.Add(name, value);
+            ModelUnbinderHelpers.AddRouteValues(routeValues, name, value);
             return result;
         }
         
@@ -354,7 +354,8 @@ namespace Links {
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-        public static readonly string Site_css = Url("Site.css");
+        public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
+             
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class themes {
             private const string URLPATH = "~/Content/themes";
@@ -385,20 +386,34 @@ namespace Links {
                     public static readonly string ui_icons_cd0a0a_256x240_png = Url("ui-icons_cd0a0a_256x240.png");
                 }
             
-                public static readonly string jquery_ui_accordion_css = Url("jquery.ui.accordion.css");
-                public static readonly string jquery_ui_all_css = Url("jquery.ui.all.css");
-                public static readonly string jquery_ui_autocomplete_css = Url("jquery.ui.autocomplete.css");
-                public static readonly string jquery_ui_base_css = Url("jquery.ui.base.css");
-                public static readonly string jquery_ui_button_css = Url("jquery.ui.button.css");
-                public static readonly string jquery_ui_core_css = Url("jquery.ui.core.css");
-                public static readonly string jquery_ui_datepicker_css = Url("jquery.ui.datepicker.css");
-                public static readonly string jquery_ui_dialog_css = Url("jquery.ui.dialog.css");
-                public static readonly string jquery_ui_progressbar_css = Url("jquery.ui.progressbar.css");
-                public static readonly string jquery_ui_resizable_css = Url("jquery.ui.resizable.css");
-                public static readonly string jquery_ui_selectable_css = Url("jquery.ui.selectable.css");
-                public static readonly string jquery_ui_slider_css = Url("jquery.ui.slider.css");
-                public static readonly string jquery_ui_tabs_css = Url("jquery.ui.tabs.css");
-                public static readonly string jquery_ui_theme_css = Url("jquery.ui.theme.css");
+                public static readonly string jquery_ui_accordion_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.accordion.min.css") ? Url("jquery.ui.accordion.min.css") : Url("jquery.ui.accordion.css");
+                     
+                public static readonly string jquery_ui_all_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.all.min.css") ? Url("jquery.ui.all.min.css") : Url("jquery.ui.all.css");
+                     
+                public static readonly string jquery_ui_autocomplete_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.autocomplete.min.css") ? Url("jquery.ui.autocomplete.min.css") : Url("jquery.ui.autocomplete.css");
+                     
+                public static readonly string jquery_ui_base_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.base.min.css") ? Url("jquery.ui.base.min.css") : Url("jquery.ui.base.css");
+                     
+                public static readonly string jquery_ui_button_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.button.min.css") ? Url("jquery.ui.button.min.css") : Url("jquery.ui.button.css");
+                     
+                public static readonly string jquery_ui_core_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.core.min.css") ? Url("jquery.ui.core.min.css") : Url("jquery.ui.core.css");
+                     
+                public static readonly string jquery_ui_datepicker_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.datepicker.min.css") ? Url("jquery.ui.datepicker.min.css") : Url("jquery.ui.datepicker.css");
+                     
+                public static readonly string jquery_ui_dialog_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.dialog.min.css") ? Url("jquery.ui.dialog.min.css") : Url("jquery.ui.dialog.css");
+                     
+                public static readonly string jquery_ui_progressbar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.progressbar.min.css") ? Url("jquery.ui.progressbar.min.css") : Url("jquery.ui.progressbar.css");
+                     
+                public static readonly string jquery_ui_resizable_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.resizable.min.css") ? Url("jquery.ui.resizable.min.css") : Url("jquery.ui.resizable.css");
+                     
+                public static readonly string jquery_ui_selectable_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.selectable.min.css") ? Url("jquery.ui.selectable.min.css") : Url("jquery.ui.selectable.css");
+                     
+                public static readonly string jquery_ui_slider_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.slider.min.css") ? Url("jquery.ui.slider.min.css") : Url("jquery.ui.slider.css");
+                     
+                public static readonly string jquery_ui_tabs_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.tabs.min.css") ? Url("jquery.ui.tabs.min.css") : Url("jquery.ui.tabs.css");
+                     
+                public static readonly string jquery_ui_theme_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.theme.min.css") ? Url("jquery.ui.theme.min.css") : Url("jquery.ui.theme.css");
+                     
             }
         
         }
@@ -435,5 +450,7 @@ public static class T4MVCHelpers {
 
 #endregion T4MVC
 #pragma warning restore 1591
+
+
 
 
