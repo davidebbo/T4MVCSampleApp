@@ -20,8 +20,10 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
-namespace T4MVCSampleApp.Controllers {
-    public partial class AccountController {
+namespace T4MVCSampleApp.Controllers
+{
+    public partial class AccountController
+    {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AccountController() { }
 
@@ -29,13 +31,15 @@ namespace T4MVCSampleApp.Controllers {
         protected AccountController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected RedirectToRouteResult RedirectToAction(ActionResult result) {
+        protected RedirectToRouteResult RedirectToAction(ActionResult result)
+        {
             var callInfo = result.GetT4MVCResult();
             return RedirectToRoute(callInfo.RouteValueDictionary);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected RedirectToRouteResult RedirectToActionPermanent(ActionResult result) {
+        protected RedirectToRouteResult RedirectToActionPermanent(ActionResult result)
+        {
             var callInfo = result.GetT4MVCResult();
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
         }
@@ -54,7 +58,8 @@ namespace T4MVCSampleApp.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionNamesClass {
+        public class ActionNamesClass
+        {
             public readonly string LogOn = "LogOn";
             public readonly string LogOff = "LogOff";
             public readonly string Register = "Register";
@@ -63,7 +68,8 @@ namespace T4MVCSampleApp.Controllers {
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionNameConstants {
+        public class ActionNameConstants
+        {
             public const string LogOn = "LogOn";
             public const string LogOff = "LogOff";
             public const string Register = "Register";
@@ -72,11 +78,46 @@ namespace T4MVCSampleApp.Controllers {
         }
 
 
-        static readonly ViewNames s_views = new ViewNames();
+        static readonly ActionParamsClass_LogOn s_params_LogOn = new ActionParamsClass_LogOn();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ViewNames Views { get { return s_views; } }
+        public ActionParamsClass_LogOn LogOnParams { get { return s_params_LogOn; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ViewNames {
+        public class ActionParamsClass_LogOn
+        {
+            public readonly string model = "model";
+            public readonly string returnUrl = "returnUrl";
+        }
+        static readonly ActionParamsClass_Register s_params_Register = new ActionParamsClass_Register();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Register RegisterParams { get { return s_params_Register; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Register
+        {
+            public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_ChangePassword s_params_ChangePassword = new ActionParamsClass_ChangePassword();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ChangePassword ChangePasswordParams { get { return s_params_ChangePassword; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ChangePassword
+        {
+            public readonly string model = "model";
+        }
+        static readonly ViewsClass s_views = new ViewsClass();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ViewsClass Views { get { return s_views; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ViewsClass
+        {
+            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+            public class _ViewNamesClass
+            {
+                public readonly string ChangePassword = "ChangePassword";
+                public readonly string ChangePasswordSuccess = "ChangePasswordSuccess";
+                public readonly string LogOn = "LogOn";
+                public readonly string Register = "Register";
+            }
             public readonly string ChangePassword = "~/Views/Account/ChangePassword.cshtml";
             public readonly string ChangePasswordSuccess = "~/Views/Account/ChangePasswordSuccess.cshtml";
             public readonly string LogOn = "~/Views/Account/LogOn.cshtml";
@@ -85,50 +126,59 @@ namespace T4MVCSampleApp.Controllers {
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public class T4MVC_AccountController: T4MVCSampleApp.Controllers.AccountController {
+    public class T4MVC_AccountController : T4MVCSampleApp.Controllers.AccountController
+    {
         public T4MVC_AccountController() : base(Dummy.Instance) { }
 
-        public override System.Web.Mvc.ActionResult LogOn() {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.LogOn);
+        public override System.Web.Mvc.ActionResult LogOn()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LogOn);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult LogOn(T4MVCSampleApp.Models.LogOnModel model, string returnUrl) {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.LogOn);
+        public override System.Web.Mvc.ActionResult LogOn(T4MVCSampleApp.Models.LogOnModel model, string returnUrl)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LogOn);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "returnUrl", returnUrl);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult LogOff() {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.LogOff);
+        public override System.Web.Mvc.ActionResult LogOff()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LogOff);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult Register() {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Register);
+        public override System.Web.Mvc.ActionResult Register()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Register);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult Register(T4MVCSampleApp.Models.RegisterModel model) {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Register);
+        public override System.Web.Mvc.ActionResult Register(T4MVCSampleApp.Models.RegisterModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Register);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult ChangePassword() {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ChangePassword);
+        public override System.Web.Mvc.ActionResult ChangePassword()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ChangePassword);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult ChangePassword(T4MVCSampleApp.Models.ChangePasswordModel model) {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ChangePassword);
+        public override System.Web.Mvc.ActionResult ChangePassword(T4MVCSampleApp.Models.ChangePasswordModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ChangePassword);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult ChangePasswordSuccess() {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ChangePasswordSuccess);
+        public override System.Web.Mvc.ActionResult ChangePasswordSuccess()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ChangePasswordSuccess);
             return callInfo;
         }
 
