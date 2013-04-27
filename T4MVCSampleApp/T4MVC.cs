@@ -53,7 +53,7 @@ namespace T4MVC
 }
 
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-public class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
+internal class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
 {
     public T4MVC_System_Web_Mvc_ActionResult(string area, string controller, string action, string protocol = null): base()
     {
