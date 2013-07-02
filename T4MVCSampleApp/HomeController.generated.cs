@@ -44,6 +44,12 @@ namespace T4MVCSampleApp.Controllers
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult EarningOverview()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EarningOverview);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public HomeController Actions { get { return MVC.Home; } }
@@ -62,6 +68,7 @@ namespace T4MVCSampleApp.Controllers
         {
             public readonly string Index = "Index";
             public readonly string About = "About";
+            public readonly string EarningOverview = "EarningOverview";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -69,9 +76,19 @@ namespace T4MVCSampleApp.Controllers
         {
             public const string Index = "Index";
             public const string About = "About";
+            public const string EarningOverview = "EarningOverview";
         }
 
 
+        static readonly ActionParamsClass_EarningOverview s_params_EarningOverview = new ActionParamsClass_EarningOverview();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EarningOverview EarningOverviewParams { get { return s_params_EarningOverview; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EarningOverview
+        {
+            public readonly string id = "id";
+            public readonly string frequency = "frequency";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -110,6 +127,17 @@ namespace T4MVCSampleApp.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.About);
             AboutOverride(callInfo);
+            return callInfo;
+        }
+
+        partial void EarningOverviewOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id, T4MVCSampleApp.Controllers.Frequency frequency);
+
+        public override System.Web.Mvc.ActionResult EarningOverview(string id, T4MVCSampleApp.Controllers.Frequency frequency)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EarningOverview);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "frequency", frequency);
+            EarningOverviewOverride(callInfo, id, frequency);
             return callInfo;
         }
 

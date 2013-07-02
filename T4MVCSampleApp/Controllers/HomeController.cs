@@ -19,5 +19,16 @@ namespace T4MVCSampleApp.Controllers
         {
             return View();
         }
+
+        public virtual ActionResult EarningOverview(string id, Frequency frequency = Frequency.Quarterly)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public enum Frequency
+    {
+        Quarterly,
+        Yearly
     }
 }
