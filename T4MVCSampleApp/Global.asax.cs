@@ -25,9 +25,9 @@ namespace T4MVCSampleApp
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                // new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                MVC.Home.Index().AddRouteValue("id", UrlParameter.Optional)
             );
-
         }
 
         protected void Application_Start()
