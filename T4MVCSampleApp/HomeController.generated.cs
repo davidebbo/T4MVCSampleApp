@@ -95,8 +95,10 @@ namespace T4MVCSampleApp.Controllers
     {
         public T4MVC_HomeController() : base(Dummy.Instance) { }
 
+        [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult Index()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
@@ -104,8 +106,10 @@ namespace T4MVCSampleApp.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void AboutOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult About()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.About);

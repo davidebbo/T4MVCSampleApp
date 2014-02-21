@@ -130,8 +130,10 @@ namespace T4MVCSampleApp.Controllers
     {
         public T4MVC_AccountController() : base(Dummy.Instance) { }
 
+        [NonAction]
         partial void LogOnOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult LogOn()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LogOn);
@@ -139,8 +141,10 @@ namespace T4MVCSampleApp.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void LogOnOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, T4MVCSampleApp.Models.LogOnModel model, string returnUrl);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult LogOn(T4MVCSampleApp.Models.LogOnModel model, string returnUrl)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LogOn);
@@ -150,8 +154,10 @@ namespace T4MVCSampleApp.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void LogOffOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult LogOff()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LogOff);
@@ -159,8 +165,10 @@ namespace T4MVCSampleApp.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void RegisterOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult Register()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Register);
@@ -168,8 +176,10 @@ namespace T4MVCSampleApp.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void RegisterOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, T4MVCSampleApp.Models.RegisterModel model);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult Register(T4MVCSampleApp.Models.RegisterModel model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Register);
@@ -178,8 +188,10 @@ namespace T4MVCSampleApp.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void ChangePasswordOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult ChangePassword()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ChangePassword);
@@ -187,8 +199,10 @@ namespace T4MVCSampleApp.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void ChangePasswordOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, T4MVCSampleApp.Models.ChangePasswordModel model);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult ChangePassword(T4MVCSampleApp.Models.ChangePasswordModel model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ChangePassword);
@@ -197,8 +211,10 @@ namespace T4MVCSampleApp.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void ChangePasswordSuccessOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult ChangePasswordSuccess()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ChangePasswordSuccess);
