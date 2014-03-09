@@ -14,10 +14,10 @@ namespace T4MVCSampleApp.Areas.MyCoolArea
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            context.MapRoute(
+            context.MapRouteArea(
                 "MyCoolArea_default",
                 "MyCoolArea/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                MVC.MyCoolArea.Blah.Index().AddRouteValue("id", UrlParameter.Optional)
             );
         }
     }
