@@ -74,12 +74,14 @@ namespace T4MVCSampleApp.Areas.MyCoolArea.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string CoolRoute = "CoolRoute";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string CoolRoute = "CoolRoute";
         }
 
 
@@ -112,6 +114,17 @@ namespace T4MVCSampleApp.Areas.MyCoolArea.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void CoolRouteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult CoolRoute()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CoolRoute);
+            CoolRouteOverride(callInfo);
             return callInfo;
         }
 

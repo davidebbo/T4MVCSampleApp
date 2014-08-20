@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace T4MVCSampleApp.Areas.MyCoolArea.Controllers
 {
+    [RoutePrefix("AttribRoute/InTheArea")]
     public partial class BlahController : Controller
     {
         //
@@ -16,5 +17,10 @@ namespace T4MVCSampleApp.Areas.MyCoolArea.Controllers
             return View();
         }
 
+        [Route("MyCoolRoute")]
+        public virtual ActionResult CoolRoute()
+        {
+            return View();
+        }
     }
 }

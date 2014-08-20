@@ -75,6 +75,7 @@ namespace T4MVCSampleApp.Controllers
         {
             public readonly string Index = "Index";
             public readonly string About = "About";
+            public readonly string TestAttribRoute = "TestAttribRoute";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -82,6 +83,7 @@ namespace T4MVCSampleApp.Controllers
         {
             public const string Index = "Index";
             public const string About = "About";
+            public const string TestAttribRoute = "TestAttribRoute";
         }
 
 
@@ -97,9 +99,11 @@ namespace T4MVCSampleApp.Controllers
             {
                 public readonly string About = "About";
                 public readonly string Index = "Index";
+                public readonly string TestAttribRoute = "TestAttribRoute";
             }
             public readonly string About = "~/Views/Home/About.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
+            public readonly string TestAttribRoute = "~/Views/Home/TestAttribRoute.cshtml";
         }
     }
 
@@ -127,6 +131,17 @@ namespace T4MVCSampleApp.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.About);
             AboutOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void TestAttribRouteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult TestAttribRoute()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.TestAttribRoute);
+            TestAttribRouteOverride(callInfo);
             return callInfo;
         }
 

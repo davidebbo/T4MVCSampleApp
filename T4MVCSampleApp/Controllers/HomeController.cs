@@ -19,5 +19,11 @@ namespace T4MVCSampleApp.Controllers
         {
             return View();
         }
+
+        [Route("My/Attrib/Route")]
+        public virtual ActionResult TestAttribRoute()
+        {
+            return View();
+        }
     }
 }
