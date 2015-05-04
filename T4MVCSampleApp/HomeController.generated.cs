@@ -76,6 +76,7 @@ namespace T4MVCSampleApp.Controllers
         {
             public readonly string Index = "Index";
             public readonly string About = "About";
+            public readonly string ActionReturningJson = "ActionReturningJson";
             public readonly string TestAttribRoute = "TestAttribRoute";
         }
 
@@ -84,6 +85,7 @@ namespace T4MVCSampleApp.Controllers
         {
             public const string Index = "Index";
             public const string About = "About";
+            public const string ActionReturningJson = "ActionReturningJson";
             public const string TestAttribRoute = "TestAttribRoute";
         }
 
@@ -132,6 +134,17 @@ namespace T4MVCSampleApp.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.About);
             AboutOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ActionReturningJsonOverride(T4MVC_System_Web_Mvc_JsonResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult ActionReturningJson()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.ActionReturningJson);
+            ActionReturningJsonOverride(callInfo);
             return callInfo;
         }
 

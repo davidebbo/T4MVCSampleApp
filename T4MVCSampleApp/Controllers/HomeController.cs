@@ -20,6 +20,11 @@ namespace T4MVCSampleApp.Controllers
             return View();
         }
 
+        public virtual JsonResult ActionReturningJson()
+        {
+            throw new NotImplementedException();
+        }
+
         [Route("My/Attrib/Route")]
         public virtual ActionResult TestAttribRoute()
         {
