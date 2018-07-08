@@ -181,24 +181,24 @@ namespace Links
         {
             public static class Assets
             {
-                public const string jquery_1_5_1_js = "~/Scripts/jquery-1.5.1.js"; 
-                public const string jquery_1_5_1_min_js = "~/Scripts/jquery-1.5.1.min.js"; 
-                public const string jquery_ui_1_8_11_js = "~/Scripts/jquery-ui-1.8.11.js"; 
-                public const string jquery_ui_1_8_11_min_js = "~/Scripts/jquery-ui-1.8.11.min.js"; 
-                public const string jquery_unobtrusive_ajax_js = "~/Scripts/jquery.unobtrusive-ajax.js"; 
-                public const string jquery_unobtrusive_ajax_min_js = "~/Scripts/jquery.unobtrusive-ajax.min.js"; 
-                public const string jquery_validate_js = "~/Scripts/jquery.validate.js"; 
-                public const string jquery_validate_min_js = "~/Scripts/jquery.validate.min.js"; 
-                public const string jquery_validate_unobtrusive_js = "~/Scripts/jquery.validate.unobtrusive.js"; 
-                public const string jquery_validate_unobtrusive_min_js = "~/Scripts/jquery.validate.unobtrusive.min.js"; 
-                public const string MicrosoftAjax_debug_js = "~/Scripts/MicrosoftAjax.debug.js"; 
-                public const string MicrosoftAjax_js = "~/Scripts/MicrosoftAjax.js"; 
-                public const string MicrosoftMvcAjax_debug_js = "~/Scripts/MicrosoftMvcAjax.debug.js"; 
-                public const string MicrosoftMvcAjax_js = "~/Scripts/MicrosoftMvcAjax.js"; 
-                public const string MicrosoftMvcValidation_debug_js = "~/Scripts/MicrosoftMvcValidation.debug.js"; 
-                public const string MicrosoftMvcValidation_js = "~/Scripts/MicrosoftMvcValidation.js"; 
-                public const string modernizr_1_7_js = "~/Scripts/modernizr-1.7.js"; 
-                public const string modernizr_1_7_min_js = "~/Scripts/modernizr-1.7.min.js"; 
+                public static readonly string jquery_1_5_1_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-1.5.1.js"); 
+                public static readonly string jquery_1_5_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-1.5.1.min.js"); 
+                public static readonly string jquery_ui_1_8_11_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-ui-1.8.11.js"); 
+                public static readonly string jquery_ui_1_8_11_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-ui-1.8.11.min.js"); 
+                public static readonly string jquery_unobtrusive_ajax_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.unobtrusive-ajax.js"); 
+                public static readonly string jquery_unobtrusive_ajax_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.unobtrusive-ajax.min.js"); 
+                public static readonly string jquery_validate_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.validate.js"); 
+                public static readonly string jquery_validate_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.validate.min.js"); 
+                public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.validate.unobtrusive.js"); 
+                public static readonly string jquery_validate_unobtrusive_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.validate.unobtrusive.min.js"); 
+                public static readonly string MicrosoftAjax_debug_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/MicrosoftAjax.debug.js"); 
+                public static readonly string MicrosoftAjax_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/MicrosoftAjax.js"); 
+                public static readonly string MicrosoftMvcAjax_debug_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/MicrosoftMvcAjax.debug.js"); 
+                public static readonly string MicrosoftMvcAjax_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/MicrosoftMvcAjax.js"); 
+                public static readonly string MicrosoftMvcValidation_debug_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/MicrosoftMvcValidation.debug.js"); 
+                public static readonly string MicrosoftMvcValidation_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/MicrosoftMvcValidation.js"); 
+                public static readonly string modernizr_1_7_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/modernizr-1.7.js"); 
+                public static readonly string modernizr_1_7_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/modernizr-1.7.min.js"); 
             }
         }
         public static partial class Content 
@@ -215,20 +215,20 @@ namespace Links
                     }
                     public static class Assets
                     {
-                        public const string jquery_ui_accordion_css = "~/Content/themes/base/jquery.ui.accordion.css";
-                        public const string jquery_ui_all_css = "~/Content/themes/base/jquery.ui.all.css";
-                        public const string jquery_ui_autocomplete_css = "~/Content/themes/base/jquery.ui.autocomplete.css";
-                        public const string jquery_ui_base_css = "~/Content/themes/base/jquery.ui.base.css";
-                        public const string jquery_ui_button_css = "~/Content/themes/base/jquery.ui.button.css";
-                        public const string jquery_ui_core_css = "~/Content/themes/base/jquery.ui.core.css";
-                        public const string jquery_ui_datepicker_css = "~/Content/themes/base/jquery.ui.datepicker.css";
-                        public const string jquery_ui_dialog_css = "~/Content/themes/base/jquery.ui.dialog.css";
-                        public const string jquery_ui_progressbar_css = "~/Content/themes/base/jquery.ui.progressbar.css";
-                        public const string jquery_ui_resizable_css = "~/Content/themes/base/jquery.ui.resizable.css";
-                        public const string jquery_ui_selectable_css = "~/Content/themes/base/jquery.ui.selectable.css";
-                        public const string jquery_ui_slider_css = "~/Content/themes/base/jquery.ui.slider.css";
-                        public const string jquery_ui_tabs_css = "~/Content/themes/base/jquery.ui.tabs.css";
-                        public const string jquery_ui_theme_css = "~/Content/themes/base/jquery.ui.theme.css";
+                        public static readonly string jquery_ui_accordion_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.accordion.css");
+                        public static readonly string jquery_ui_all_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.all.css");
+                        public static readonly string jquery_ui_autocomplete_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.autocomplete.css");
+                        public static readonly string jquery_ui_base_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.base.css");
+                        public static readonly string jquery_ui_button_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.button.css");
+                        public static readonly string jquery_ui_core_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.core.css");
+                        public static readonly string jquery_ui_datepicker_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.datepicker.css");
+                        public static readonly string jquery_ui_dialog_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.dialog.css");
+                        public static readonly string jquery_ui_progressbar_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.progressbar.css");
+                        public static readonly string jquery_ui_resizable_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.resizable.css");
+                        public static readonly string jquery_ui_selectable_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.selectable.css");
+                        public static readonly string jquery_ui_slider_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.slider.css");
+                        public static readonly string jquery_ui_tabs_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.tabs.css");
+                        public static readonly string jquery_ui_theme_css = T4MVCHelpers.ProcessAssetPath("~/Content/themes/base/jquery.ui.theme.css");
                     }
                 }
                 public static class Assets
@@ -237,7 +237,7 @@ namespace Links
             }
             public static class Assets
             {
-                public const string Site_css = "~/Content/Site.css";
+                public static readonly string Site_css = T4MVCHelpers.ProcessAssetPath("~/Content/Site.css");
             }
         }
     }
@@ -256,8 +256,14 @@ internal static class T4MVCHelpers {
         return path;
     }
 
+    private static string ProcessAssetPathDefault(string virtualPath) {
+        // The path that comes in starts with ~/ and should retain this prefix
+        return virtualPath;
+    }
+
     // Calling ProcessVirtualPath through delegate to allow it to be replaced for unit testing
     public static Func<string, string> ProcessVirtualPath = ProcessVirtualPathDefault;
+    public static Func<string, string> ProcessAssetPath = ProcessAssetPathDefault;
 
     // Calling T4Extension.TimestampString through delegate to allow it to be replaced for unit testing and other purposes
     public static Func<string, string> TimestampString = System.Web.Mvc.T4Extensions.TimestampString;
